@@ -76,21 +76,21 @@ def startStockInfoProc(mssql, mongoList, atOnce = setup.setupDict['StockInfo']['
   return process
 
 
-def startProc(mssql, mongoList):
+startFuncDict = {
+  'CreateIndex'   :startCreateIndexProc,
+  'RestoreClose'  :startRestoreCloseProc,
+  'RightInfo'     :startRightInfoProc,
+  'StockInfo'     :startStockInfoProc}
+
+
+def startProc(mssqlDict, mongoList):
   '''
   各任务进程启动指令
   '''
   processDict = dict()
-  startFuncDict = {
-    'Candle'        :startCandleProc,
-    'CreateIndex'   :startCreateIndexProc,
-    'RestoreClose'  :startRestoreCloseProc,
-    'RightInfo'     :startRightInfoProc,
-    'StockInfo'     :startStockInfoProc}
-
-  for key in setup.setupDict:
+  for key in startFuncDict:
     if (setup.setupDict[key]['Valid']):
-      processDict[key] = startFuncDict[key](mssql = mssql, mongoList = mongoList, atOnce = False)
+      processDict[key] = startFuncDict[key](mssql = mssqlDict, mongoList = mongoList, atOnce = setup.setupDict[key]['AtOnce'])
 
   return processDict
 
@@ -100,17 +100,22 @@ if __name__ == '__main__':
   千牛行情Python任务入口函数
   '''
   try:
-    #日志句柄
+    # 日志句柄
     logHandle = logFile.LogFile(name = 'QN_Quotation')
-    mssql = dbServer.mssqlDbServer['46']['LAN']
+    mssqlDict = dbServer.mssqlDbServer['46']['LAN']
     mongoList = [dbServer.mongoDbServer['22']['LAN'], dbServer.mongoDbServer['23']['LAN']]
-    #启动各任务进程
-    processDict = startProc(mssql, mongoList)
-
+    # 启动各任务进程
+    processDict = startProc(mssqlDict, mongoList)
+    # 启动历史行情计算
+    if (setup.setupDict['Candle']['Valid']):
+      QN_Candle.startCandle(mssqlDict = mssqlDict, mongoList = mongoList, atOnce = setup.setupDict['Candle']['AtOnce'])
+    '''
     while True:
-      time.sleep(60*60)
-      for key in setup.setupDict:
-        if (setup.setupDict[key]['Valid'] and processDict[key].is_alive()):
+      time.sleep(5)
+      for key in startFuncDict:
+        if (processDict[key].is_alive()):
           logHandle.logInfo(key + ' process is alive.')
+          print key + 'process is alive.'
+    '''
   except:
     print traceback.format_exc()

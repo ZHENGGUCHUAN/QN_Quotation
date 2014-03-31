@@ -7,7 +7,7 @@ Created on 2014-03-27
 import sys, os, traceback, pymongo, datetime, time, sched
 import setup
 sys.path.append(os.getcwd() + r'\..\Common')
-import mongoAPI, logFile
+import mongoAPI, logFile, dbServer
 
 
 def createCandleDayIndex(mongoHandle):
@@ -99,6 +99,7 @@ def createIndex(mongoList):
   创建索引操作
   '''
   print 'createIndex >>'
+  print mongoList
   logHandle = logFile.LogFile(name = 'CreateIndex')
   for mongo in mongoList:
     mongoHandle = mongoAPI.MongoAPI(server = mongo['SERVER'], port = mongo['PORT'])
@@ -120,7 +121,6 @@ def createIndex(mongoList):
     except:
       logHandle.logInfo(str(traceback.format_exc()))
       print traceback.format_exc()
-      break
   print 'createIndex <<'
   return None
 
@@ -157,3 +157,8 @@ def startCreateIndex(mongoList, atOnce = False):
       print traceback.format_exc()
 
   return None
+
+if __name__ == '__main__':
+  mongoList = [dbServer.mongoDbServer['22']['LAN'], dbServer.mongoDbServer['23']['LAN']]
+  startCreateIndex(mongoList, atOnce=True)
+

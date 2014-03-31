@@ -7,7 +7,7 @@ Created on 2014-03-27
 import sys, os, traceback, datetime, sched, time, collections
 import setup
 sys.path.append(os.getcwd() + r'\..\Common')
-import mssqlAPI, mongoAPI, logFile
+import mssqlAPI, mongoAPI, logFile, dbServer
 
 
 class StockInfo(object):
@@ -108,7 +108,7 @@ class StockInfo(object):
         document['SN'] = record['MC'].strip()
         if ((record['ZZSJ'] is not None) and (record['ZZSJ'] != 0)):
           document['DT'] = record['ZZSJ']
-        for mongoHandle in self.mongoHandle:
+        for mongoHandle in self.mongoHandleList:
           #更新已存在的股票信息
           spec = {'_id.IC' : int(record['DM']), 'SN' : {'$ne': record['MC'].strip()}}
           mongoHandle.update('INFO', 'INFO', spec, document, upsert = False)
@@ -165,3 +165,9 @@ def startStockInfo(mssqlDict, mongoList, atOnce = False):
       scheduleHandle.run()
     except:
       print traceback.format_exc()
+
+
+if __name__ == '__main__':
+  mssqlDict = dbServer.mssqlDbServer['46']['LAN']
+  mongoList = [dbServer.mongoDbServer['22']['LAN'], dbServer.mongoDbServer['23']['LAN']]
+  startStockInfo(mssqlDict, mongoList, atOnce=True)

@@ -70,7 +70,7 @@ class CalculateData(object):
         extensionInfo = collections.OrderedDict()
         extensionInfo['INNER_CODE'] = stockData['INNER_CODE']
         excludeType = 3
-        if (self.db == 'DAY'):
+        if (db == 'DAY'):
           extensionInfo['TRADE_DATE'] = stockData['TRADE_DATE']
           '''
           #除权除息信息
@@ -83,7 +83,7 @@ class CalculateData(object):
           else:
             excludeType = 3
           '''
-        elif (self.db == 'WEEK'):
+        elif (db == 'WEEK'):
           extensionInfo['TRADE_YEAR'] = stockData['TRADE_YEAR']
           extensionInfo['TRADE_WEEK'] = stockData['TRADE_WEEK']
           '''
@@ -97,7 +97,7 @@ class CalculateData(object):
           else:
             excludeType = 3
           '''
-        elif (self.db == 'MONTH'):
+        elif (db == 'MONTH'):
           extensionInfo['TRADE_YEAR'] = stockData['TRADE_YEAR']
           extensionInfo['TRADE_MONTH'] = stockData['TRADE_MONTH']
           '''

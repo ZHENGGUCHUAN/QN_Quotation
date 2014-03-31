@@ -20,7 +20,7 @@ class UpdateMongo(object):
     self.mongoHandleList = list()
     for mongo in mongoList:
       mongoHandle = mongoAPI.MongoAPI(mongo['SERVER'], mongo['PORT'])
-      self.mongoHandleList.append(mongo)
+      self.mongoHandleList.append(mongoHandle)
     # LogFile句柄
     self.logHandle = logFile.LogFile(name = 'Candle')
 
@@ -80,11 +80,11 @@ class UpdateMongo(object):
       infoDict['EMA'] = [float(updateData['EXT']['EMA5']), float(updateData['EXT']['EMA6']), float(updateData['EXT']['EMA12']),
                          float(updateData['EXT']['EMA13']), float(updateData['EXT']['EMA26']), float(updateData['EXT']['EMA35'])]
 
-      for mongo in self.mongoList:
-        mongo.update(QN_constant.dbDict[updateData['DB']]['TABLE']['MONGO'], 'data', {'_id':idDict}, infoDict)
+      for mongoHandle in self.mongoHandleList:
+        mongoHandle.update(QN_constant.dbDict[updateData['DB']]['TABLE']['MONGO'], 'data', {'_id':idDict}, infoDict)
         #并表数据写入
         if (updateData['WMT']):
-          mongo.update(QN_constant.dbDict[updateData['DB']]['TABLE']['MERGE'], 'data', {'_id':idDict}, infoDict)
+          mongoHandle.update(QN_constant.dbDict[updateData['DB']]['TABLE']['MERGE'], 'data', {'_id':idDict}, infoDict)
     except:
       self.logHandle.logInfo(str(traceback.format_exc()))
       print traceback.format_exc()

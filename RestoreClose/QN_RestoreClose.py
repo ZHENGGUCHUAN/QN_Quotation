@@ -7,7 +7,7 @@ Created on 2014-03-27
 import sys, os, traceback, collections, datetime, sched, time
 import setup
 sys.path.append(os.getcwd() + r'\..\Common')
-import mssqlAPI, mongoAPI, logFile
+import mssqlAPI, mongoAPI, logFile, dbServer
 
 
 class RestoreClose(object):
@@ -137,3 +137,9 @@ def startRestoreClose(mssqlDict, mongoList, atOnce = False):
       print traceback.format_exc()
 
   return None
+
+
+if __name__ == '__main__':
+  mssqlDict = dbServer.mssqlDbServer['46']['LAN']
+  mongoList = [dbServer.mongoDbServer['22']['LAN'], dbServer.mongoDbServer['23']['LAN']]
+  startRestoreClose(mssqlDict, mongoList, atOnce=True)

@@ -9,7 +9,7 @@ import setup
 sys.path.append(os.getcwd() + r'\Candle')
 import QN_CorrectCandle
 sys.path.append(os.getcwd() + r'\..\Common')
-import mssqlAPI, mongoAPI, logFile, common
+import mssqlAPI, mongoAPI, logFile, common, dbServer
 
 
 def cleanInvalidData(mongoList):
@@ -78,20 +78,22 @@ def correctCandle(mssqlDict, mongoList):
     # 查询结果信息
     for processName in monitorProcessDict:
       print processName, len(monitorProcessDict[processName])
-      print 'queryMssqlQueue:',correctCandleHandle.querySqlQueue.qsize()
-      print 'mongoQueue:',correctCandleHandle.updateMongoQueue.qsize()
-      if ((len(monitorProcessDict['QueryMssql']) == 0) and
-          (correctCandleHandle.querySqlQueue.qsize() == 0) and
-          (correctCandleHandle.updateMongoQueue.qsize() == 0)):
-        terminateNum += 1
-      if (terminateNum >= 10):
-        #关闭所有进程
-        for processName in monitorProcessDict:
-          for process in monitorProcessDict[processName]:
-            if (process.is_alive() == True):
-              process.terminate()
-        break
-      time.sleep(10)
+    print 'queryMssqlQueue:',correctCandleHandle.queryMssqlQueue.qsize()
+    print 'mongoQueue:',correctCandleHandle.updateMongoQueue.qsize()
+    if ((len(monitorProcessDict['QueryMssql']) == 0) and
+        (correctCandleHandle.queryMssqlQueue.qsize() == 0) and
+        (correctCandleHandle.updateMongoQueue.qsize() == 0)):
+      terminateNum += 1
+    #终止判断
+    if (terminateNum >= 10):
+      #关闭所有进程
+      for processName in monitorProcessDict:
+        for process in monitorProcessDict[processName]:
+          if (process.is_alive() == True):
+            process.terminate()
+      del correctCandleHandle
+      break
+    time.sleep(10)
 
   return None
 
@@ -134,6 +136,7 @@ def candle(mssqlDict, mongoList):
   '''
   历史行情更新操作
   '''
+  startTime = datetime.datetime.now()
   # 清理Mongo库历史行情中存在的异常数据
   cleanInvalidData(mongoList)
   # 创建Mongo库历史行情索引
@@ -142,6 +145,16 @@ def candle(mssqlDict, mongoList):
   correctCandle(mssqlDict, mongoList)
   # 删除Mongo库历史行情中多余的数据
   cleanOverdueData(mongoList)
+
+  finalTime = datetime.datetime.now()
+  deltaTime = finalTime - startTime
+  totalTime = deltaTime.total_seconds()
+  totalHour = totalTime // 3600
+  totalMin = (totalTime % 3600) // 60
+  totalSec = totalTime % 60
+  print("Total time: %d(h)%d(m)%d(s)" % (int(totalHour), int(totalMin), int(totalSec)))
+  logFileHandle = logFile.LogFile(name = 'Candle')
+  logFileHandle.logInfo('Correct all security info succeed, total time: ' + str(int(totalHour)) + '(h)' + str(int(totalMin)) + '(m)' + str(int(totalSec)) + '(s)')
 
   return None
 
@@ -176,3 +189,9 @@ def startCandle(mssqlDict, mongoList, atOnce = False):
       scheduleHandle.run()
     except:
       print traceback.format_exc()
+
+
+if __name__ == '__main__':
+  mssqlDict = dbServer.mssqlDbServer['46']['LAN']
+  mongoList = [dbServer.mongoDbServer['22']['LAN'], dbServer.mongoDbServer['23']['LAN']]
+  startCandle(mssqlDict, mongoList, atOnce=True)

@@ -7,7 +7,7 @@ Created on 2014-03-27
 import sys, os, traceback, datetime, sched, time, collections, pymongo
 import setup
 sys.path.append(os.getcwd() + r'\..\Common')
-import mssqlAPI, mongoAPI, logFile, common
+import mssqlAPI, mongoAPI, logFile, common, dbServer
 
 
 class RightInfo(object):
@@ -101,8 +101,8 @@ class RightInfo(object):
     Insert stock info into mongo.
     '''
     try:
-      for mongoHandle in self.mongoHandle:
-        mongoHandle.remove()
+      #for mongoHandle in self.mongoHandleList:
+      #  mongoHandle.remove()
 
       recordNum = 0
       recentDict = self.getRecentTradeTime()
@@ -126,22 +126,19 @@ class RightInfo(object):
         CirculationStockChangeRatio += float(0) if (record['BONUS_SHR'] is None) else float(record['BONUS_SHR'])
         document['FR'] = CirculationStockChangeRatio / float(10)
 
-        for mongoHandle in self.mongoHandle:
+        for mongoHandle in self.mongoHandleList:
           if (recentDict.get(inwardId) is None):
             document['EF'] = int(0)
-          elif (self.recentDict.get(inwardId) >= keyDoc['TO']):
+          elif (recentDict.get(inwardId) >= keyDoc['TO']):
             document['EF'] = int(1)
           else:
             document['EF'] = int(0)
           mongoHandle.update('INFO', 'RIGHT', spec, document)
         recordNum += 1
-      self.logFileInstance.logInfo('Update ration succeed, update records: ' + str(recordNum))
-    except Exception,e:
-      self.logFileInstance.logInfo('Update ration failed, update records: ' + str(recordNum) + '/' + str(len(records)) + ', exception: ' + str(e))
-    #insert index
-    index = [[('_id.IC', pymongo.ASCENDING), ('_id.TO', pymongo.ASCENDING)], [('_id.TO', pymongo .ASCENDING)], [('EF', pymongo.ASCENDING)]]
-    for mongoHandle in self.disposeDbRationInstance.mongoHandle:
-      mongoHandle.createIndex('INFO', 'RIGHT', index)
+      self.logHandle.logInfo('Update ration succeed, update records: ' + str(recordNum))
+    except:
+      self.logHandle.logInfo('Update ration failed, update records: ' + str(recordNum) + '/' + str(len(records)) + ', exception: ' + str(traceback.format_exc()))
+      print traceback.format_exc()
 
     return None
 
@@ -186,3 +183,9 @@ def startRightInfo(mssqlDict, mongoList, atOnce = False):
       scheduleHandle.run()
     except:
       print traceback.format_exc()
+
+
+if __name__ == '__main__':
+  mssqlDict = dbServer.mssqlDbServer['46']['LAN']
+  mongoList = [dbServer.mongoDbServer['22']['LAN'], dbServer.mongoDbServer['23']['LAN']]
+  startRightInfo(mssqlDict, mongoList, atOnce=True)

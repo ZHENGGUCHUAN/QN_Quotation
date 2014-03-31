@@ -12,7 +12,13 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/QN_Quotation$main.coverage" NAME="main Coverage Results" MODIFIED="1395897018827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/QN_Quotation$QN_RightInfo.coverage" NAME="QN_RightInfo Coverage Results" MODIFIED="1395990982291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RightInfo" />
+    <SUITE FILE_PATH="coverage/QN_Quotation$QN_RestoreClose.coverage" NAME="QN_RestoreClose Coverage Results" MODIFIED="1395989799687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RestoreClose" />
+    <SUITE FILE_PATH="coverage/QN_Quotation$QN_CorrectCandle.coverage" NAME="QN_CorrectCandle Coverage Results" MODIFIED="1395999633299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Candle" />
+    <SUITE FILE_PATH="coverage/QN_Quotation$QN_StockInfo.coverage" NAME="QN_StockInfo Coverage Results" MODIFIED="1395989942732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/StockInfo" />
+    <SUITE FILE_PATH="coverage/QN_Quotation$QN_Candle.coverage" NAME="QN_Candle Coverage Results" MODIFIED="1396000221250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Candle" />
+    <SUITE FILE_PATH="coverage/QN_Quotation$QN_CreateIndex.coverage" NAME="QN_CreateIndex Coverage Results" MODIFIED="1395989471988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CreateIndex" />
+    <SUITE FILE_PATH="coverage/QN_Quotation$main.coverage" NAME="main Coverage Results" MODIFIED="1395988586240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -29,19 +35,8 @@
       <file leaf-file-name="setup.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="29" selection-start="749" selection-end="749" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="551">
+            <state line="17" column="31" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="551">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QN_Candle.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Candle/QN_Candle.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="35" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.0" vertical-offset="806" max-vertical-offset="3496">
-              <folding>
-                <element signature="e#72#165#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -49,7 +44,7 @@
       <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="63" selection-start="1946" selection-end="1946" vertical-scroll-proportion="0.79347825" vertical-offset="930" max-vertical-offset="2318">
+            <state line="116" column="52" selection-start="3202" selection-end="3202" vertical-scroll-proportion="0.6557971" vertical-offset="1842" max-vertical-offset="2413">
               <folding>
                 <element signature="e#73#121#0" expanded="true" />
               </folding>
@@ -57,23 +52,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QN_StockInfo.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StockInfo/QN_StockInfo.py">
+      <file leaf-file-name="QN_Candle.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Candle/QN_Candle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="13" selection-start="4029" selection-end="4029" vertical-scroll-proportion="0.0" vertical-offset="2227" max-vertical-offset="3287">
+            <state line="93" column="11" selection-start="3474" selection-end="3474" vertical-scroll-proportion="0.0" vertical-offset="3253" max-vertical-offset="3857">
               <folding>
-                <element signature="e#72#133#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QN_CreateIndex.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CreateIndex/QN_CreateIndex.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="23" selection-start="3644" selection-end="3644" vertical-scroll-proportion="0.0" vertical-offset="1794" max-vertical-offset="3135">
-              <folding>
-                <element signature="e#72#129#0" expanded="true" />
+                <element signature="e#72#165#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,46 +66,10 @@
       <file leaf-file-name="QN_CorrectCandle.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Candle/QN_CorrectCandle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="6" selection-start="977" selection-end="977" vertical-scroll-proportion="-12.307693" vertical-offset="101" max-vertical-offset="2622">
+            <state line="148" column="12" selection-start="4020" selection-end="4020" vertical-scroll-proportion="0.0" vertical-offset="536" max-vertical-offset="3135">
               <folding>
-                <element signature="e#72#114#0" expanded="true" />
+                <element signature="e#72#125#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QN_QueryMssql.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Candle/QN_QueryMssql.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="6" selection-start="1205" selection-end="1205" vertical-scroll-proportion="0.0" vertical-offset="2835" max-vertical-offset="3439">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QN_CalculateData.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Candle/QN_CalculateData.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="54" selection-start="4134" selection-end="4134" vertical-scroll-proportion="0.0" vertical-offset="188" max-vertical-offset="4028">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Common/common.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="13" selection-start="1720" selection-end="1729" vertical-scroll-proportion="0.0" vertical-offset="783" max-vertical-offset="1805">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QN_constant.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Candle/QN_constant.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="0" selection-start="2709" selection-end="2709" vertical-scroll-proportion="0.0" vertical-offset="734" max-vertical-offset="2774">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -141,22 +89,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Candle/CorrectCandle.py" />
         <option value="$PROJECT_DIR$/Candle/QN_constant.py" />
         <option value="$PROJECT_DIR$/Candle/QN_Calculate.py" />
         <option value="$PROJECT_DIR$/Candle/QN_Heap.py" />
         <option value="$PROJECT_DIR$/../Common/common.py" />
-        <option value="$PROJECT_DIR$/Candle/QN_CalculateData.py" />
-        <option value="$PROJECT_DIR$/Candle/QN_UpdateMongo.py" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/Candle/QN_QuerySql.py" />
-        <option value="$PROJECT_DIR$/Candle/QN_CorrectCandle.py" />
-        <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/Candle/QN_Candle.py" />
         <option value="$PROJECT_DIR$/CreateIndex/QN_CreateIndex.py" />
         <option value="$PROJECT_DIR$/RestoreClose/QN_RestoreClose.py" />
-        <option value="$PROJECT_DIR$/RightInfo/QN_RightInfo.py" />
         <option value="$PROJECT_DIR$/StockInfo/QN_StockInfo.py" />
+        <option value="$PROJECT_DIR$/RightInfo/QN_RightInfo.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/Candle/QN_QueryMssql.py" />
+        <option value="$PROJECT_DIR$/Candle/QN_CalculateData.py" />
+        <option value="$PROJECT_DIR$/Candle/QN_UpdateMongo.py" />
+        <option value="$PROJECT_DIR$/Candle/QN_CorrectCandle.py" />
+        <option value="$PROJECT_DIR$/Candle/QN_Candle.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -302,21 +250,97 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.QN_Candle">
+    <configuration default="false" name="QN_RestoreClose" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RestoreClose" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="QN_Quotation" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RestoreClose/QN_RestoreClose.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="QN_StockInfo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/StockInfo" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="QN_Quotation" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/StockInfo/QN_StockInfo.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="QN_RightInfo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RightInfo" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="QN_Quotation" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RightInfo/QN_RightInfo.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="QN_Candle" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Candle" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="QN_Quotation" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Candle/QN_Candle.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="QN_CorrectCandle" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Candle" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="QN_Quotation" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Candle/QN_CorrectCandle.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
@@ -472,12 +496,20 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Python.main" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python.QN_RestoreClose" />
+      <item index="1" class="java.lang.String" itemvalue="Python.QN_StockInfo" />
+      <item index="2" class="java.lang.String" itemvalue="Python.QN_RightInfo" />
+      <item index="3" class="java.lang.String" itemvalue="Python.QN_Candle" />
+      <item index="4" class="java.lang.String" itemvalue="Python.QN_CorrectCandle" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.main" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.QN_Candle" />
+        <item index="1" class="java.lang.String" itemvalue="Python.QN_CorrectCandle" />
+        <item index="2" class="java.lang.String" itemvalue="Python.QN_RightInfo" />
+        <item index="3" class="java.lang.String" itemvalue="Python.QN_StockInfo" />
+        <item index="4" class="java.lang.String" itemvalue="Python.QN_RestoreClose" />
       </list>
     </recent_temporary>
   </component>
@@ -534,14 +566,14 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32943678" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.6705632" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32943678" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -563,30 +595,23 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../Common/dbServer.py">
+    <entry file="file://$PROJECT_DIR$/../Common/mssqlAPI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="4" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1159">
+        <state line="125" column="37" selection-start="2786" selection-end="2790" vertical-scroll-proportion="0.5215232" vertical-offset="2041" max-vertical-offset="2831">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Candle/QN_QueryMssql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="41" selection-start="139" selection-end="139" vertical-scroll-proportion="0.22019868" vertical-offset="0" max-vertical-offset="3439">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Candle/QN_Heap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="18" selection-start="572" selection-end="572" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1197">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Common/logFile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="49" selection-start="214" selection-end="218" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="950">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Common/common.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="13" selection-start="1720" selection-end="1729" vertical-scroll-proportion="0.0" vertical-offset="783" max-vertical-offset="1805">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1197">
           <folding />
         </state>
       </provider>
@@ -598,39 +623,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-697680286/thread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="4" selection-start="3369" selection-end="3369" vertical-scroll-proportion="-0.044701986" vertical-offset="1851" max-vertical-offset="5491">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Python27/Lib/threading.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="653" column="8" selection-start="22978" selection-end="22978" vertical-scroll-proportion="0.0" vertical-offset="12206" max-vertical-offset="25365">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Candle/QN_UpdateMongo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="26" selection-start="414" selection-end="414" vertical-scroll-proportion="0.4271523" vertical-offset="122" max-vertical-offset="1862">
+        <state line="22" column="45" selection-start="531" selection-end="531" vertical-scroll-proportion="0.0" vertical-offset="1144" max-vertical-offset="1862">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Candle/QN_CalculateData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="54" selection-start="4134" selection-end="4134" vertical-scroll-proportion="0.0" vertical-offset="188" max-vertical-offset="4028">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Candle/QN_QueryMssql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="6" selection-start="1205" selection-end="1205" vertical-scroll-proportion="0.0" vertical-offset="2835" max-vertical-offset="3439">
+        <state line="48" column="49" selection-start="1255" selection-end="1255" vertical-scroll-proportion="0.22634508" vertical-offset="790" max-vertical-offset="4028">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Candle/QN_CorrectCandle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="6" selection-start="977" selection-end="977" vertical-scroll-proportion="-12.307693" vertical-offset="101" max-vertical-offset="2622">
+        <state line="148" column="12" selection-start="4020" selection-end="4020" vertical-scroll-proportion="0.0" vertical-offset="536" max-vertical-offset="3135">
           <folding>
-            <element signature="e#72#114#0" expanded="true" />
+            <element signature="e#72#125#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Candle/QN_Candle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="35" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.0" vertical-offset="806" max-vertical-offset="3496">
+        <state line="93" column="11" selection-start="3474" selection-end="3474" vertical-scroll-proportion="0.0" vertical-offset="3253" max-vertical-offset="3857">
           <folding>
             <element signature="e#72#165#0" expanded="true" />
           </folding>
@@ -639,14 +671,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="29" selection-start="749" selection-end="749" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="551">
+        <state line="17" column="31" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="551">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CreateIndex/QN_CreateIndex.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="23" selection-start="3644" selection-end="3644" vertical-scroll-proportion="0.0" vertical-offset="1794" max-vertical-offset="3135">
+        <state line="8" column="36" selection-start="179" selection-end="179" vertical-scroll-proportion="-3.0827816" vertical-offset="2014" max-vertical-offset="3230">
           <folding>
             <element signature="e#72#129#0" expanded="true" />
           </folding>
@@ -655,7 +687,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RestoreClose/QN_RestoreClose.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="24" selection-start="2862" selection-end="2862" vertical-scroll-proportion="0.4271523" vertical-offset="1699" max-vertical-offset="2755">
+        <state line="140" column="0" selection-start="4083" selection-end="4304" vertical-scroll-proportion="2.6357615" vertical-offset="1068" max-vertical-offset="2869">
           <folding>
             <element signature="e#72#133#0" expanded="true" />
           </folding>
@@ -664,7 +696,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RightInfo/QN_RightInfo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="21" selection-start="4864" selection-end="4864" vertical-scroll-proportion="0.615894" vertical-offset="2611" max-vertical-offset="3686">
+        <state line="141" column="0" selection-start="4332" selection-end="4332" vertical-scroll-proportion="0.64735097" vertical-offset="2288" max-vertical-offset="3743">
           <folding>
             <element signature="e#72#142#0" expanded="true" />
           </folding>
@@ -673,7 +705,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/StockInfo/QN_StockInfo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="13" selection-start="4029" selection-end="4029" vertical-scroll-proportion="0.0" vertical-offset="2227" max-vertical-offset="3287">
+        <state line="169" column="26" selection-start="5206" selection-end="5206" vertical-scroll-proportion="2.1953642" vertical-offset="1885" max-vertical-offset="3401">
           <folding>
             <element signature="e#72#133#0" expanded="true" />
           </folding>
@@ -682,7 +714,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="63" selection-start="1946" selection-end="1946" vertical-scroll-proportion="0.79347825" vertical-offset="930" max-vertical-offset="2318">
+        <state line="116" column="52" selection-start="3202" selection-end="3202" vertical-scroll-proportion="0.6557971" vertical-offset="1842" max-vertical-offset="2413">
           <folding>
             <element signature="e#73#121#0" expanded="true" />
           </folding>

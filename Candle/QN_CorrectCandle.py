@@ -4,7 +4,7 @@ Created on 2014-03-27
 
 @author: Grayson
 '''
-import sys, os, traceback, multiprocessing
+import sys, os, traceback, multiprocessing, threading
 import setup
 sys.path.append(os.getcwd() + r'\Candle')
 import QN_constant, QN_QueryMssql, QN_CalculateData, QN_UpdateMongo
@@ -47,7 +47,7 @@ class CorrectCandle(object):
       user = self.mssqlDict['USER'],
       pwd = self.mssqlDict['PWD'])
     try:
-      mssqlHandle.sqlExecuteProc(name='usp_UpdateFrom251', ())
+      mssqlHandle.sqlExecuteProc('usp_UpdateFrom251', ())
       mssqlHandle.sqlCommit()
     except:
       self.logHandle.logInfo(str(traceback.format_exc()))
@@ -62,8 +62,15 @@ class CorrectCandle(object):
     # 分代码查询，增加与SQL交互，减少内存占用率，查询效率会略有下降。
     stockCodeList = queryMssqlHandle.getStockCodeList()
     if (stockCodeList is not None):
+      splitStockCodeList = list()
       for stockCode in stockCodeList:
-        queryMssqlHandle.getSpecifyData(db, [stockCode])
+        splitStockCodeList.append(stockCode)
+        if (len(splitStockCodeList) >= 100):
+          queryMssqlHandle.getSpecifyData(db, splitStockCodeList)
+          splitStockCodeList = list()
+      else:
+        if (len(splitStockCodeList) > 0):
+          queryMssqlHandle.getSpecifyData(db, splitStockCodeList)
 
     return None
 
@@ -74,9 +81,16 @@ class CorrectCandle(object):
     '''
     queryMssqlProcessList = list()
     for db in QN_constant.dbDict:
+      # 多进程版本
       process = multiprocessing.Process(target=self.queryMssql, args=(db, ))
       process.start()
       queryMssqlProcessList.append(process)
+      '''
+      # 多线程版本
+      thread = threading.Thread(target=self.queryMssql, args=(db, ))
+      thread.start()
+      queryMssqlProcessList.append(thread)
+      '''
 
     return queryMssqlProcessList
 
@@ -86,7 +100,7 @@ class CorrectCandle(object):
     计算操作
     '''
     calculateDataHandle = QN_CalculateData.CalculateData(self.updateMongoQueue)
-    for msg in iter(self.querySqlQueue.get, None):
+    for msg in iter(self.queryMssqlQueue.get, None):
       calculateDataHandle.calculateData(msg['DB'], msg['MSG'])
     '''
     except KeyError:
@@ -101,9 +115,16 @@ class CorrectCandle(object):
     '''
     calculateDataProcessList = list()
     for num in range(0, processNum):
+      # 多进程版本
       process = multiprocessing.Process(target=self.calculateData, args=(self.querySqlQueue, self.updateMongoQueue))
       process.start()
       calculateDataProcessList.append(process)
+      '''
+      # 多线程版本
+      thread = threading.Thread(target=self.calculateData)
+      thread.start()
+      calculateDataProcessList.append(thread)
+      '''
 
     return calculateDataProcessList
 
@@ -125,8 +146,14 @@ class CorrectCandle(object):
     '''
     updateMongoProcessList = list()
     for num in range(0, processNum):
+      # 多进程版本
       process = multiprocessing.Process(target=self.updateMongo, args=())
       process.start()
       updateMongoProcessList.append(process)
-
+      '''
+      # 多线程版本
+      thread = threading.Thread(target=self.updateMongo)
+      thread.start()
+      updateMongoProcessList.append(thread)
+      '''
     return updateMongoProcessList
